@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>ToRaGaMa's Raschietto</title>
+    <!-- LIBS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-switch.min.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/sidebar.css" />
+    <link rel="stylesheet" href="css/bootstrap-dialog.min.css" />
+    <!-- /LIBS -->
+    <link rel="stylesheet" href="css/raschietto.css" />
+</head>
+
+<header>
+    <div id="headerContainer">
+        <div class="head_logo" id="head_logo">
+            <div class="container">
+                <img src="img/raschietto.png" height="80px" style="float:left;"/>
+                <div align="center" class="contscritta"><span class="scrittahead">ToRaGaMa's Raschietto</span></div>
+            </div>
+        </div>
+        <!-- NAVBAR -->
+        <nav class="navbar navbar-inverse" id="navbar">
+            <div class="container-flex">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-head" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand sidemenu-toggle" href="#toggle-navbar" id="toggle-navbar"><i class="fa fa-bars"></i></a>
+                    <!-- <a class="navbar-brand" href="#">Raschietto</a>-->
+            </div>
+
+                <div class="collapse navbar-collapse" id="navbar-head">
+                    <ul class="nav navbar-nav">
+                        <!--<li class="active"><a href="#">Home</a></li> -->
+                        <li><a data-toggle="modal" data-target="#helpModal" onclick="openHelp()" style="cursor: pointer;">Help</a></li>
+                        <li><a data-toggle="modal" data-target="#aboutModal" onclick="openAbout()" style="cursor: pointer;">About</a></li>
+                    </ul>
+                    <div class="navbar-form navbar-left" role="load_document">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">http://</span>
+                                <input type="text" class="form-control uriform" placeholder="Inserisci un indirizzo" id="URIin">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-default" id="loadURI">Carica</button>
+                    </div>
+                    <div class="navbar-right">
+                        <div class="navbar-text">
+                            <div class="switch-mode" id="switchSelector"><input type="checkbox" name="switch-mode" data-size="mini" data-on-text="Reader" data-on-color="default" data-off-text="Annotator" data-off-color="primary" checked></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- /NAVBAR -->
+    </div>
+</header>
+
+<!-- CONTAINER -->
+    <div id="wrapper" class="mycontainer">
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingOne">
+                        <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Documenti Annotati
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="panel-body">
+                            <div class="content_sidebar" id="documenti_annotati">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingTwo">
+                        <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Filtri per Grafo
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                        <div class="panel-body">
+                            <div class="content_sidebar" id="filtri_autori">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingThree">
+                        <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Filtri per le Annotazioni
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                        <div class="panel-body">
+                            <div class="content_sidebar" id="filtri_annotazioni">
+                                <li class="checkbox"><a><label class="titoloAnnotato"><input type="checkbox" id="ckTitolo" checked />Titolo</label></a></li>
+                                <li class="checkbox"><a><label class="autoreAnnotato"><input type="checkbox" id="ckAutori" checked />Autori</label></a></li>
+                                <li class="checkbox"><a><label class="annoPubblicazioneAnnotato"><input type="checkbox" id="ckAnnoPub" checked />Anno di pubblicazione</label></a></li>
+                                <li class="checkbox"><a><label class="commentoAnnotato"><input type="checkbox" id="ckCommenti" checked />Commenti</label></a></li>
+                                <li class="checkbox"><a><label class="retoricaAnnotato"><input type="checkbox" id="ckRetorica" checked />Retorica</label></a></li>
+                                <li class="checkbox"><a><label class="citazioneAnnotato"><input type="checkbox" id="ckCitazioni" checked />Citazioni</label></a></li>
+                                <li class="checkbox"><a><label class="doiAnnotato"><input type="checkbox" id="ckDOI" checked />DOI</label></a></li>
+                                <li class="checkbox"><a><label class="urlAnnotato"><input type="checkbox" id="ckURL" checked />URL</label></a></li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--<li><b>Documenti annotati</b></li>
+            <div class="content_sidebar" id="documenti_annotati">
+            </div>
+            <hr />
+            <li><b>Filtri per Autore</b></li>
+            <div class="content_sidebar" id="filtri_autori">
+            </div>
+            <hr />
+            <li><b>Filtri per le annotazioni</b></li>
+            <div class="content_sidebar" id="filtri_annotazioni">
+                <li class="checkbox"><a><label class="titoloAnnotato"><input type="checkbox" id="ckTitolo" checked />Titolo</label></a></li>
+                <li class="checkbox"><a><label class="autoreAnnotato"><input type="checkbox" id="ckAutori" checked />Autori</label></a></li>
+                <li class="checkbox"><a><label class="annoPubblicazioneAnnotato"><input type="checkbox" id="ckAnnoPub" checked />Anno di pubblicazione</label></a></li>
+                <li class="checkbox"><a><label class="commentoAnnotato"><input type="checkbox" id="ckCommenti" checked />Commenti</label></a></li>
+                <li class="checkbox"><a><label class="retoricaAnnotato"><input type="checkbox" id="ckRetorica" checked />Retorica</label></a></li>
+                <li class="checkbox"><a><label class="citazioneAnnotato"><input type="checkbox" id="ckCitazioni" checked />Citazioni</label></a></li>
+                <li class="checkbox"><a><label class="doiAnnotato"><input type="checkbox" id="ckDOI" checked />DOI</label></a></li>
+                <li class="checkbox"><a><label class="urlAnnotato"><input type="checkbox" id="ckURL" checked />URL</label></a></li>
+            </div>-->
+            <!--<hr /> -->
+            <!--<li><a href="#">Un altro link</a></li>
+            <li><a href="#">Ciaone</a></li>-->
+        </ul>
+    </div>
+    <!-- /Sidebar -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <!-- TABS -->
+        <ul class="nav nav-tabs noBorderBottomTabs" id="documentTabs">
+            <li role="tab" class="active"><a href="#welcome"><button class="close closeTab" type="button" >×</button>Welcome</a></li>
+        </ul>
+        <!-- /TABS -->
+        <!-- TABS CONTENTS -->
+        <div class="main-content tab-content" id="tabsContent">
+            <div class="tab-pane active" id="welcome">
+                <div class="jumbotron">
+                    <div class="container">
+                        <h1>Hello, Raschietto!</h1>
+                        <p>Questo &egrave; il progetto Raschietto del gruppo <b>ToRaGaMa</b>, un <b>web scraper</b> con funzionalit&agrave; di annotazione.</p>
+                        <p>Per iniziare, <b>digitare un indirizzo</b> nella barra dedicata sopra alle schede, oppure <b>selezionare un documento gi&agrave; annotato</b>, aprendo la barra laterale <i class="fa fa-bars"></i> .</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /TABS CONTENTS -->
+    </div>
+    <!-- /Page Content -->
+
+
+    </div>
+<!-- /CONTAINER -->
+
+<!-- JS SECTION -->
+<!-- LIBS -->
+<script type="text/javascript" rel="script" src="js/jquery-2.2.0.min.js"></script>
+<script type="text/javascript" rel="script" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" rel="script" src="js/bootstrap-switch.min.js"></script>
+<script type="text/javascript" rel="script" src="js/bootstrap-notify.min.js"></script>
+<script type="text/javascript" rel="script" src="js/bootstrap-dialog.min.js"></script>
+<script type="text/javascript" rel="script" src="js/js.cookie.min.js"></script>
+<script type="text/javascript" rel="script" src="js/rangy-combined.min.js"></script>
+<script type="text/javascript" rel="script" src="js/moment.min.js"></script>
+<script type="text/javascript" rel="script" src="js/string.min.js"></script>
+<!-- /LIBS -->
+<!-- ToRaGaMa's JS -->
+<script type="text/javascript" rel="script" src="js/raschietto_core.js"></script>
+<script type="text/javascript" rel="script" src="js/raschietto_side.js"></script>
+<script type="text/javascript" rel="script" src="js/raschietto_graphics.js"></script>
+<script type="text/javascript" rel="script" src="js/raschietto_inserimento.js"></script>
+<script type="text/javascript" rel="script" src="js/raschietto_caricamento.js"></script>
+<script type="text/javascript" rel="script" src="js/raschietto_annotazioni.js"></script>
+<script type="text/javascript">
+
+</script>
+<!-- /ToRaGaMa's JS -->
+<!-- /JS SECTION -->
+</body>
+</html>
