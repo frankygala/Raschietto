@@ -1,0 +1,493 @@
+/* IMPORTING LATO FROM LOCAL */
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Lato Light'), local('Lato-Light'), url('../fonts/latofont/Lato-Light.ttf');
+}
+@font-face {
+    font-family: 'Lato';
+    font-style: italic;
+    font-weight: 300;
+    src: local('Lato Light'), local('Lato-LightItalic'), url('../fonts/latofont/Lato-LightItalic.ttf');
+}
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Lato Regular'), local('Lato-Regular'), url('../fonts/latofont/Lato-Regular.ttf');
+}
+@font-face {
+    font-family: 'Lato';
+    font-style: italic;
+    font-weight: 400;
+    src: local('Lato Regular'), local('Lato-Italic'), url('../fonts/latofont/Lato-Italic.ttf');
+}
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Lato Bold'), local('Lato-Bold'), url('../fonts/latofont/Lato-Bold.ttf');
+}
+@font-face {
+    font-family: 'Lato';
+    font-style: italic;
+    font-weight: 700;
+    src: local('Lato Bold'), local('Lato-BoldItalic'), url('../fonts/latofont/Lato-BoldItalic.ttf');
+}
+@font-face {
+    font-family: 'Lato Bold Italic';
+    font-style: italic;
+    font-weight: 700;
+    src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url('../fonts/latofont/Lato-BoldItalic.ttf');
+}
+
+.latoBoldItalic {
+    font-family: "Lato Bold Italic", sans-serif, cursive;
+}
+
+.sottolineaTesto {
+    text-decoration: underline;
+}
+
+/* PROPERTIES */
+body {
+    overflow-x: hidden;
+    font-family: Lato;
+    background-color: #000;
+    max-height: 100%;
+}
+
+img {
+    /*max-width: 100%;*/
+}
+
+@media screen and (max-width: 640px) {
+    table {
+        overflow-x: auto;
+        display: block;
+    }
+}
+
+.head_logo {
+    background-color: rgb(60,60,60);
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    z-index:9999999999;
+}
+
+.navbar {
+    border:none;
+    border-radius: 0;
+    margin-bottom: 0;
+}
+
+.scrittahead {
+    color: #fff;
+    font-size: 25px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@media(min-width:992px) {
+    .scrittahead {
+        font-size: 28px;
+    }
+}
+@media(max-width:991px) {
+    .scrittahead {
+        font-size: 26px;
+    }
+}
+@media(max-width:400px){
+    .scrittahead {
+        font-size: 20px;
+    }
+}
+
+.switch-mode{
+    margin-top: -2px;
+    margin-bottom: -2px;
+}
+
+.main-content {
+    padding: 1.7%;
+}
+
+.contscritta {
+    height: 55px;
+}
+
+.content_sidebar {
+    max-height: 350px;
+    overflow-y: scroll;
+}
+
+.content_sidebar li {
+    word-wrap: break-word;
+    word-break: break-all;
+    padding-left: 20px;
+    padding-right:20px;
+    text-indent: 0px;
+}
+
+#tabsContent {
+    overflow-y: hidden;
+}
+
+/* URIFORM */
+@media(min-width:992px) {
+    .uriform {
+        width: 430px !important;
+    }
+}
+@media(max-width:991px) {
+    .uriform {
+        width: 230px !important;
+    }
+}
+@media(max-width:767px){
+    .uriform {
+        width: 100% !important;
+    }
+}
+/* /URIFORM */
+
+/* TABS */
+.nav-tabs li a{
+    color: #9D9D9D;
+}
+
+.closeTab {
+    margin-left: 5px !important;
+    margin-top: -1px !important;
+}
+
+.nav-tabs {
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: -webkit-box;
+    display: -moz-box;
+}
+.nav-tabs>li {
+    float: none;
+}
+
+.noBorderBottomTabs {
+    border-bottom: 0px;
+}
+
+.nav-tabs li.active a {
+    background-color: #bbbbbb;
+}
+
+.nav-tabs li.active a:hover {
+    background-color: #cccccc;
+}
+
+/* /TABS */
+
+/* MENU LATERALE */
+#filtri_annotazioni input[type="checkbox"] {
+    margin-right: 6px;
+}
+#filtri_annotazioni .checkbox input[type="checkbox"] {
+    position: relative;
+}
+#filtri_annotazioni li {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+/* COLORI ANNOTAZIONI */
+.titoloAnnotato {
+    background-color: #c12e2a;
+    color: #fff;
+    cursor: pointer;
+}
+
+.autoreAnnotato {
+    background-color: #b9def0;
+    color: #000;
+    cursor: pointer;
+}
+
+.annoPubblicazioneAnnotato {
+    background-color: #3e8f3e;
+    color: #000;
+    cursor: pointer;
+}
+
+.commentoAnnotato {
+    background-color: #2b669a;
+    color: #fff;
+    cursor: pointer;
+}
+
+.retoricaAnnotato {
+    background-color: gold;
+    color: #000;
+    cursor: pointer;
+}
+
+.citazioneAnnotato {
+    background-color: hotpink;
+    color: #fff;
+    cursor: pointer;
+}
+
+.doiAnnotato {
+    background-color: navy;
+    color: #fff;
+    cursor: pointer;
+}
+
+.urlAnnotato {
+    background-color: grey;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Menu tasto destro */
+.rightMenu {
+    display: none;
+    z-index: 1000;
+    position: absolute;
+    overflow: hidden;
+    border: 1px solid #CCC;
+    white-space: nowrap;
+    font-family: sans-serif;
+    background: #FFF;
+    color: #333;
+    border-radius: 5px;
+    padding: 0;
+}
+
+.rightMenu li {
+    padding: 8px 12px;
+    cursor: pointer;
+    list-style-type: none;
+}
+
+.rightMenu li:hover {
+    background-color: #DEF;
+}
+
+/* menuAnnotationMobile */
+.menuAnnotationMobile {
+    display:none;
+    position:fixed;
+    right:20px;
+    background-color:rgba(60,60,60,0.1);
+    padding-left:5px;
+    padding-top:5px;
+    padding-bottom:5px;
+    z-index: 99;
+}
+
+.menuAnnotationMobileShow {
+    display: block;
+}
+
+/* btnMenuAnnotation */
+.btnMenuAnnotation {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-right: 6px;
+    padding-left: 6px;
+    margin-right: 5px;
+}
+
+/* MENU LATERALE SINISTRO FIX */
+#documenti_annotati li a {
+    cursor: pointer;
+}
+
+/* Alert */
+.customAlert {
+    text-align: center;
+    position: fixed;
+    z-index: 100;
+    top: 200px;
+    left: 10%;
+    width: 80%;
+}
+
+/* Modal Gestione Annotazioni */
+
+div .singleAnnotationShownDialog {
+    background-color: rgba(215, 215, 215, 0.2);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    padding-top: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+div .singleAnnotationReadShownDialog {
+    background-color: rgba(215, 215, 215, 0.5);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    padding-top: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+div .singleAnnotationShownDialog:hover {
+    background-color: rgba(215, 215, 215, 0.4);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.bodyLabelDialog {
+    font-size: 18px !important;
+}
+
+.opTempAnnotation {
+    padding-top: 2px;
+}
+
+.deleteTempAnnotation {
+    color: #C12E2A;
+}
+
+.editTempAnnotation {
+    color: #2e6da4;
+}
+
+.sendSingleTempAnnotation {
+    color: #3e8f3e;
+}
+
+.deleteTempAnnotation > span {
+    text-decoration: underline;
+}
+
+.deleteTempAnnotation:hover {
+    cursor: pointer;
+}
+
+.editTempAnnotation > span {
+    text-decoration: underline;
+}
+
+.editTempAnnotation:hover {
+    cursor: pointer;
+}
+
+.sendSingleTempAnnotation > span {
+    text-decoration: underline;
+}
+
+.sendSingleTempAnnotation:hover {
+    cursor: pointer;
+}
+
+.bodyModalAnnotationsList {
+    max-height: 430px;
+    overflow-y: scroll;
+}
+
+#bodyAnnotationManagerDialog {
+    max-height: 430px;
+    overflow-y: scroll;
+}
+
+#annotationsOnFragment {
+    max-height: 430px;
+    overflow-y: scroll;
+}
+
+#filtri_autori .checkbox input[type="checkbox"] {
+    position: relative;
+}
+
+#filtri_autori input[type="checkbox"] {
+    margin-right: 6px;
+}
+
+.panel{
+    background-color:transparent;
+}
+
+.panel-default{
+    border-color:transparent !important;
+}
+
+.panel-default > .panel-heading {
+    background-color: transparent !important;
+    background-image: none !important;
+}
+
+.panel-title > a {
+    color: #ffffff !important;
+}
+
+.panel-body {
+    padding:0 !important;
+}
+
+/* Makes images fully responsive */
+
+.img-responsive,
+.thumbnail > img,
+.thumbnail a > img,
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* ------------------- Carousel Styling ------------------- */
+
+.carousel-inner {
+    border-radius: 15px;
+}
+
+.carousel-caption {
+    background-color: rgba(0,0,0,.5);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    padding: 0 0 10px 25px;
+    color: #fff;
+    text-align: left;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    z-index: 15;
+    margin: 0;
+    padding: 0 25px 25px 0;
+    text-align: right;
+}
+
+.carousel-control.left,
+.carousel-control.right {
+    background-image: none;
+}
+
+.nascondoAutore{
+    background-color: rgba(0, 0, 0, 0) !important;;
+    color: #000 !important;;
+    cursor: default !important;
+}
+
+.nascondoAnnotazione{
+    background-color: rgba(0, 0, 0, 0) !important;;
+    color: #000 !important;;
+    cursor: default !important;
+}
